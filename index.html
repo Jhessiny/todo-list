@@ -11,7 +11,7 @@
     <main>
         <div id="bg-header" class="bg-header-dark"></div>
         <section class="main_section">
-            <div>
+            <div id="mode-sign">
                 <div id="mode" onclick="changeMode()"></div>
                 <div class="mode-text"><p>Select a mode</p></div>
             </div>
@@ -96,8 +96,10 @@
     <div class="edit_task_form" id="edit_task_form">
         <form action="">
             <h2>Edit task</h2>
-                <input name="task" type="text" id="taskEdit" placeholder="Nova Tarefa">
+                <div class="row">
+                    <input name="task" type="text" id="taskEdit" placeholder="Nova Tarefa">
                 <input name="date" type="date" name="" id="dateEdit">
+                </div>
                 <input name="index" type="number" name="" id="indexEdit" >
                 <button type="button" class="btn_yellow" onclick="togglePopUp('')"">Cancel</button>
                 <button type="button" onclick="saveChanges()" class="btn_yellow">Save</button>

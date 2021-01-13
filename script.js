@@ -2,10 +2,8 @@ let task;
 let date;
 let tasks = [];
 let list = document.getElementById("lista_ul");
-// let localStorage;
 
 function fstLoad() {
-  // localStorage = JSON.parse(localStorage.getItem("tasks"));
   JSON.parse(localStorage.getItem("tasks"))
     ? (tasks = JSON.parse(localStorage.getItem("tasks")))
     : [];
