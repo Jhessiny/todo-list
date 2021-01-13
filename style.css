@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-size: 62.25%; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.dark-mode {
+  background-color: #181824;
+  color: #ddd;
+}
+
+.light-mode {
+  background-color: rgb(24, 24, 36);
+  color: #eee;
+}
+
+.main_section {
+  min-height: 100vh;
+  max-width: 550px;
+  padding: 2rem 1rem;
+  margin: auto;
+  position: relative;
+}
+
+.bg-header {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      90deg,
+      rgba(2, 0, 31, 0.863) 0%,
+      rgba(2, 2, 75, 0.7) 45%,
+      rgba(2, 74, 88, 0.7) 100%
+    ),
+    url("img/bg.jpg");
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.top_btns {
+  padding: 0.5rem;
+}
+
+.button_plus {
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 50%;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: auto;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+#plus_ballon {
+  background-color: beige;
+  color: rgb(110, 64, 31);
+  padding: 2px;
+  font-size: 0.7rem;
+  display: none;
+  position: absolute;
+  left: 100px;
+  /* top: -15px; */
+}
+
+.form_new_task {
+  background-color: #25273c;
+  padding: 2rem 1rem;
+  border-radius: 3px;
+  margin: 0.5rem 0 3rem 0;
+  width: 100%;
+  height: 8rem;
+  display: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.3rem;
+}
+
+.tasks_list {
+  background-color: #25273c;
+  padding: 20px 0 0 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+input {
+  width: 48%;
+  border: none;
+  background-color: #25273c;
+  border-bottom: 1px solid #6e6d6d;
+  padding: 0.5rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  outline: none;
+}
+
+input[type="date"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: #6e6d6d;
+  background-image: url("img/calendar.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+li label {
+  position: relative;
+  margin-left: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+li label::before {
+  content: "\2716";
+  transform: scale(0);
+  position: absolute;
+  border-radius: 100%;
+  left: -48px;
+  top: -10px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  transition: 0.1s;
+  color: #eee;
+}
+
+li label::after {
+  content: "";
+  border: 1px solid #525151aa;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  border-radius: 100%;
+  left: -50px;
+  top: -10px;
+}
+
+input[type="checkbox"]:checked + label::before {
+  transform: scale(1);
+  transition: 0.1s;
+}
+
+.btn_yellow {
+  background-color: #1a113f;
+  padding: 0.5rem;
+  border: none;
+  margin-right: 2px;
+  transition: 0.5s;
+  color: #eee;
+}
+
+.btn_yellow:hover {
+  background-color: #564a88;
+  transition: 0.5s;
+}
+
+.form_new_task button {
+  float: right;
+}
+
+ul {
+  list-style: none;
+  border: none;
+}
+
+li {
+  padding: 1.3rem 1.5rem 1.3rem 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #525151aa;
+}
+li p {
+  padding-top: 0.3rem;
+}
+
+.done {
+  text-align: center;
+  padding: 2rem;
+  display: block;
+}
+
+.done p {
+  margin-bottom: 1rem;
+}
+
+.edit_task_form {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #50504fbb;
+  display: none;
+}
+
+.edit_task_form form {
+  background-color: #52b9b3;
+  width: 55%;
+  padding: 2rem 4rem 2rem 4rem;
+  margin: 10rem auto;
+  text-align: center;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+}
+
+.edit_task_form form button {
+  margin-top: 1.5rem;
+}
+
+.edit_task_form h2 {
+  margin-bottom: 1.5rem;
+}
+
+.close_popup {
+  color: #ffffff;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.close_popup:hover {
+  cursor: pointer;
+}
+
+#indexEdit {
+  display: none;
+}
+
+.time_management_tips {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.time_management_tips p {
+  margin-bottom: 2rem;
+  text-indent: 3rem;
+}
+
+.time_management_tips h3 {
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+}
+
+.time_management_tips h4 {
+  margin: 1rem 0 0.5rem 0;
+}
+
+@media (max-width: 500px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .row input {
+    width: 100%;
+  }
+  .main_section {
+    padding: 1rem;
+  }
+}

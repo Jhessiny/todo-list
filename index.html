@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/6b97cdf12a.js" crossorigin="anonymous"> </script>
+</head>
+<body onload="fstLoad()" class="dark-mode ">
+    <main>
+        <div class="bg-header"></div>
+        <section class="main_section">
+            <h1 class="title">My To-do List</h1>
+            <div id="plus_ballon" >Add new task</div>
+            <div id="top_btns" class="top_btns">
+                <button type="button" id="btn_plus" class="button_plus" onmouseover="toggleShowBallon(true)" onmouseout="toggleShowBallon(false)" onclick="toggleDisplayForm()"><i class="fas fa-plus" ></i></button>
+                <button type="button" onclick="clearList()" class="btn_yellow">Clear list</button>
+            </div>
+            <form action="">
+                <div id="form_new_task" class="form_new_task">
+                    <div class="row">
+                        <input name="task" type="text" id="task" placeholder="Nova Tarefa">
+                    <input name="date" type="date" name="" id="date">
+                    </div>
+                    <button type="button" class="btn_yellow" onclick="addTask()">Create</button>
+                    <button type="button" onclick="resetTask()" class="btn_yellow">Reset</button>
+                </div>
+            </form>
+            <div class='btns'>
+                <button class='btn_yellow' onclick="deleteTask()"><img src="img/trash.ico" alt=""></button>
+                <button class='btn_yellow' onclick="deleteTask()"><img src="img/check.ico" alt=""></button>
+                <button class='btn_yellow' onclick="togglePopUp()"><img src="img/edit.ico" alt=""></button>
+            </div>
+            <div class="tasks_list">
+                <h2 class="title">My tasks</h2>
+                <ul id="lista_ul">
+                    <li><input id="check" type="checkbox"><label for="check">Teste</label></li>
+                </ul>
+            </div>
+    
+            <div id="done" class="done">
+                <p>No tasks left! Enjoy your Day</p>
+                <img src="img/beach.png" alt="">
+            </div>
+        </section>
+
+
+        <div class="time_management_tips">
+           <p>
+            Você gerencia bem o tempo ou é daquelas pessoas que costumam acumular tarefas, perder prazos e deixa para resolver assuntos importantes na última hora? Já se perguntou se é possível tornar-se uma pessoa mais organizada e produtiva, que não desperdiçar tempo? Quantas vezes você desejou que o dia tivesse mais do que 24 horas?
+           </p>
+
+           <p>
+            Entre as várias ferramentas de gestão de produtividade, existe uma denominada Tríade do Tempo, criada por Christian Barbosa, fundador de uma consultoria especializada em produtividade pessoal para empresas. A ideia é simples: organizar as tarefas do dia a dia, conforme o grau de importância, urgência ou circunstância:
+           </p>
+           <p>Tarefas importantes: são as tarefas que proporcionam resultados significativos à sua vida, ou seja, são realmente importantes para você, mas não necessariamente para as outras pessoas;</p>
+           <p>Tarefas urgentes: são acontecimentos imprevistos, que causam estresse e conturbam sua rotina. Também podem ser urgentes as tarefas previstas, mas que não foram executadas no prazo;</p>
+           <p>
+            Tarefas circunstanciais: correspondem a tarefas que são mais importantes para outras pessoas, porém, não são imprescindíveis para a sua vida.</p>
+            
+           <h3>Tríade do tempo ideal: mais produtividade</h3>
+           <p>A partir dessa divisão de importância, urgência e circunstância, fica fácil analisar como você administra seu tempo. Você gasta mais tempo realizando atividades que são importantes para outras pessoas e não para você? Deixa para cumprir suas obrigações em cima da hora porque desperdiça tempo com ações desnecessárias? Como é possível melhorar a gestão do tempo? Como seria a tríade do tempo ideal?
+           </p>
+
+           <p>
+            Passar 100% do tempo realizando tarefas que são importantes é o ideal, mas esta não é a realidade da maioria dos profissionais. Afinal, estamos o tempo todo interagindo com o mundo, mas sem controle sobre os acontecimentos. Imprevistos acontecem e, por conta da hierarquia profissional e das relações comerciais, a tendência é que os indivíduos realizem muitas atividades que são necessárias aos outros — mas não a seu próprio trabalho. Por esta razão, não é possível descartar completamente o que é urgente ou circunstancial.
+           </p>
+           <p>
+            A proposta da Tríade do Tempo é utilizar 70% do tempo com tarefas importantes, 20% para as urgências e 10% para as atividades circunstanciais. No entanto, isto não significa ganhar automaticamente produtividade. Você vai dividir bem o tempo dedicado ao que é importante, urgente ou circunstancial, mas não elevar a produtividade.
+           </p>
+
+            <h3>Como melhorar a gestão do tempo?</h3>
+            <p>Para melhorar a gestão do tempo e, ao mesmo, tornar-se uma pessoa mais produtiva, você precisa seguir às seguintes dicas:</p>
+
+            <h4>Organize</h4>
+            <p>O primeiro passo é fazer uma lista de tudo o que você precisa executar, organizando as tarefas conforme o grau de importância, urgência e circunstância. Dessa forma, você não sobrecarrega a mente guardando tantas informações e tentando lembrar de todas as pendências.</p>
+
+            <h4>Planeje</h4>
+            <p>Ainda que você não possa ter controle absoluto sobre tudo, é importante planejar a agenda e fazer o possível para seguir esta programação. Dessa forma, você conseguirá atingir os objetivos e cumprir obrigações no tempo certo, sem sobressaltos e estresses.</p>
+
+            <h4>Antecipe</h4>
+            <p>Sempre que possível, antecipe tarefas. Se algum compromisso foi desmarcado ou sobrou tempo no seu dia, por que não aproveitar para antecipar alguma tarefa? Assim, você não corre o risco de que imprevistos prejudiquem as atividades programadas.</p>
+
+            <h4>Priorize</h4>
+            <p>É importante atualizar sua lista de afazeres. Isso porque, ao longo do dia, podem surgir outros compromissos importantes e que devem ser priorizados. Com isso, outras tarefas poderão ficar em segundo plano.</p>
+
+            <h4>Equilibre</h4>
+            <p>Independentemente do seu estilo de produtividade, a ideia da Tríade do Tempo não deve engessar sua vida. É importante estar aberto às mudanças e também reservar tempo para o descanso, lazer, hobby, convívio familiar e social. Esse equilíbrio faz bem ao corpo e à mente e, consequentemente, você terá melhores condições para realizar tudo aquilo que é realmente importante, além de concentração para enfrentar os acontecimentos urgentes e disposição para atender às necessidades circunstanciais.</p>
+        </div>
+    </main>
+    <div class="edit_task_form" id="edit_task_form">
+        <form action="">
+            <h2>Edit task</h2>
+                <input name="task" type="text" id="taskEdit" placeholder="Nova Tarefa">
+                <input name="date" type="date" name="" id="dateEdit">
+                <input name="index" type="number" name="" id="indexEdit" >
+                <button type="button" class="btn_yellow" onclick="togglePopUp('')"">Cancel</button>
+                <button type="button" onclick="saveChanges()" class="btn_yellow">Save</button>
+                <div class="close_popup" onclick="togglePopUp('')">X</div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
