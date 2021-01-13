@@ -5,7 +5,6 @@
 }
 
 body {
-  /* font-size: 62.25%; */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -117,8 +116,7 @@ button:focus {
   font-size: 0.7rem;
   display: none;
   position: absolute;
-  left: 100px;
-  /* top: -15px; */
+  left: 45px;
 }
 
 #form_new_task {

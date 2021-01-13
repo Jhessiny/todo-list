@@ -2,9 +2,13 @@ let task;
 let date;
 let tasks = [];
 let list = document.getElementById("lista_ul");
+// let localStorage;
 
 function fstLoad() {
-  tasks = JSON.parse(localStorage.getItem("tasks"));
+  // localStorage = JSON.parse(localStorage.getItem("tasks"));
+  JSON.parse(localStorage.getItem("tasks"))
+    ? (tasks = JSON.parse(localStorage.getItem("tasks")))
+    : [];
   console.log("carregou");
   renderList();
   toggleEnjoyDay();
