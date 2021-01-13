@@ -9,8 +9,12 @@
 </head>
 <body onload="fstLoad()" class="dark-mode ">
     <main>
-        <div class="bg-header"></div>
+        <div id="bg-header" class="bg-header-dark"></div>
         <section class="main_section">
+            <div>
+                <div id="mode" onclick="changeMode()"></div>
+                <div class="mode-text"><p>Select a mode</p></div>
+            </div>
             <h1 class="title">My To-do List</h1>
             <div id="plus_ballon" >Add new task</div>
             <div id="top_btns" class="top_btns">
@@ -18,7 +22,7 @@
                 <button type="button" onclick="clearList()" class="btn_yellow">Clear list</button>
             </div>
             <form action="">
-                <div id="form_new_task" class="form_new_task">
+                <div id="form_new_task" class="form_new_task_dark">
                     <div class="row">
                         <input name="task" type="text" id="task" placeholder="Nova Tarefa">
                     <input name="date" type="date" name="" id="date">
@@ -32,7 +36,7 @@
                 <button class='btn_yellow' onclick="deleteTask()"><img src="img/check.ico" alt=""></button>
                 <button class='btn_yellow' onclick="togglePopUp()"><img src="img/edit.ico" alt=""></button>
             </div>
-            <div class="tasks_list">
+            <div class="tasks_list_dark" id="task_list">
                 <h2 class="title">My tasks</h2>
                 <ul id="lista_ul">
                     <li><input id="check" type="checkbox"><label for="check">Teste</label></li>
@@ -41,7 +45,7 @@
     
             <div id="done" class="done">
                 <p>No tasks left! Enjoy your Day</p>
-                <img src="img/beach.png" alt="">
+                <img src="img/beach.ico" alt="">
             </div>
         </section>
 

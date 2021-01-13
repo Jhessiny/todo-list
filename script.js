@@ -162,3 +162,32 @@ function saveChanges() {
   renderList();
   togglePopUp("");
 }
+
+let mode = "dark";
+let modeHtml = document.getElementById("mode");
+let body = document.querySelector("body");
+let taskList = document.getElementById("task_list");
+let header = document.getElementById("bg-header");
+let formNewTask = document.getElementById("form_new_task");
+
+modeHtml.innerHTML = "<img src='img/sun.ico'></img>";
+
+function changeMode() {
+  if (mode === "dark") {
+    mode = "light";
+    modeHtml = document.getElementById("mode").innerHTML =
+      "<img src='img/moon.ico'></img>";
+    body.classList = "light-mode";
+    taskList.classList = "tasks_list_light";
+    header.classList = "bg-header-light";
+    formNewTask.classList = "form_new_task_light";
+  } else {
+    mode = "dark";
+    modeHtml = document.getElementById("mode").innerHTML =
+      "<img src='img/sun.ico'></img>";
+    body.classList = "dark-mode";
+    taskList.classList = "tasks_list_dark";
+    header.classList = "bg-header-dark";
+    formNewTask.classList = "form_new_task_dark";
+  }
+}

@@ -12,16 +12,16 @@ body {
 h1 {
   text-transform: uppercase;
   font-size: 2rem;
+  color: #ddd;
 }
 
 .dark-mode {
   background-color: #181824;
-  color: #ddd;
+  color: #eee;
 }
 
 .light-mode {
-  background-color: rgb(24, 24, 36);
-  color: #eee;
+  background-color: rgb(253, 253, 253);
 }
 
 .main_section {
@@ -32,12 +32,14 @@ h1 {
   position: relative;
 }
 
-.bg-header {
+#bg-header {
   position: absolute;
   width: 100%;
   height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.bg-header-dark {
   background-image: linear-gradient(
       90deg,
       rgba(2, 0, 31, 0.863) 0%,
@@ -45,6 +47,39 @@ h1 {
       rgba(2, 74, 88, 0.7) 100%
     ),
     url("img/bg.jpg");
+}
+
+.bg-header-light {
+  background-image: linear-gradient(
+      90deg,
+      rgba(55, 52, 102, 0.863) 0%,
+      rgba(93, 93, 172, 0.7) 45%,
+      rgba(131, 217, 235, 0.7) 100%
+    ),
+    url("img/bg.jpg");
+}
+
+.mode-text {
+  background-color: #eee;
+  color: #181824;
+  width: 150px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: 0.5s;
+}
+#mode {
+  width: 20px;
+}
+
+#mode:hover + .mode-text {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#mode:hover {
+  cursor: pointer;
 }
 
 .title {
@@ -86,8 +121,7 @@ button:focus {
   /* top: -15px; */
 }
 
-.form_new_task {
-  background-color: #25273c;
+#form_new_task {
   padding: 2rem 1rem;
   border-radius: 3px;
   margin: 0.5rem 0 3rem 0;
@@ -96,15 +130,38 @@ button:focus {
   display: none;
 }
 
+.form_new_task_dark {
+  background-color: #25273c;
+}
+
+.form_new_task_light {
+  background-color: #d3d3d3;
+}
+
+.form_new_task_light input {
+  background-color: #d3d3d3;
+}
+
 .btns {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.3rem;
 }
 
-.tasks_list {
+.tasks_list_dark {
   background-color: #25273c;
   padding: 20px 0 0 0;
+  color: #ddd;
+}
+
+.tasks_list_light label::before {
+  color: rgb(85, 84, 84);
+}
+
+.tasks_list_light {
+  background-color: #d3d3d3;
+  padding: 20px 0 0 0;
+  color: #424242;
 }
 
 .row {
@@ -130,7 +187,7 @@ input[type="date"] {
   color: #6e6d6d;
   background-image: url("img/calendar.png");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: 95%;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -194,7 +251,7 @@ input[type="checkbox"]:checked + label::before {
   transition: 0.5s;
 }
 
-.form_new_task button {
+#form_new_task button {
   float: right;
 }
 
@@ -217,10 +274,15 @@ li p {
   text-align: center;
   padding: 2rem;
   display: block;
+  margin-top: 6rem;
 }
 
 .done p {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.done img {
+  width: 200px;
 }
 
 .edit_task_form {
